@@ -1,5 +1,15 @@
 package apps.anupam.webdemo
 
-/**
- * Created by pc4 on 05-Jan-18.
- */
+import android.content.Context
+import android.webkit.JavascriptInterface
+import android.widget.Toast
+
+class WebAppInterface constructor(context: Context) {
+    private val mContext = context;
+
+    @JavascriptInterface
+    fun showToast(message: String) {
+        Toast.makeText(mContext, message, Toast.LENGTH_LONG).show();
+    }
+
+}
